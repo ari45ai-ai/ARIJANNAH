@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina | Studio Galeri Momen Interaktif</title>
+    <!-- Font Google Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Dynamic Glowing Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Custom Floating Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Header / Navbar Floating Glassmorphism -->
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-icon"><i data-lucide="sparkles"></i></div>
+            <h2>AJ<span>.</span></h2>
+        </div>
+
+        <nav class="filter-nav">
+            <button class="filter-btn active" data-filter="all">
+                <i data-lucide="grid"></i> Semua Momen
+            </button>
+            <button class="filter-btn" data-filter="travel">
+                <i data-lucide="compass"></i> Travel & Nature
+            </button>
+            <button class="filter-btn" data-filter="LIBURAN">
+                <i data-lucide="user"></i> LIBURAN
+            </button>
+            <button class="filter-btn" data-filter="memories">
+                <i data-lucide="heart"></i> Memories
+            </button>
+        </nav>
+
+        <div class="header-actions">
+            <span class="photo-count-badge" id="photo-count"><i data-lucide="image"></i> 6 Foto</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-badge">
+            <i data-lucide="aperture"></i> Professional Gallery Experience
+        </div>
+        <h1 class="hero-title">Abadikan Momen Terindah Dalam <span class="gradient-text">Warna & Cahaya</span></h1>
+        <p class="hero-subtitle">Ruang galeri digital interaktif dengan estetika warna cerah, hidup, dan memanjakan mata.</p>
+
+        <!-- Search Bar Interaktif -->
+        <div class="search-container">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" id="search-input" placeholder="Cari kenangan, judul, atau tempat...">
+            <button class="clear-search-btn" id="clear-search"><i data-lucide="x"></i></button>
+        </div>
+    </section>
+
+    <!-- Gallery Grid Section -->
+    <main class="gallery-section">
+        <div class="gallery-container" id="gallery-grid">
+            
+            <!-- Item 1 -->
+            <div class="gallery-item travel" data-title="Moment 1" data-category="Travel & Nature" data-date="9 Mei 2026" data-location="Telagasaat">
+                <div class="card-inner">
+                    <div class="img-wrapper">
+                        <img src="images/6.jpg" alt="Petualangan" loading="lazy">
+                        <div class="card-glass-overlay">
+                            <span class="category-tag"><i data-lucide="compass"></i> Travel</span>
+                            <div class="card-info">
+                                <h3>Petualangan</h3>
+                                <p><i data-lucide="map-pin"></i> Telagasaat • 2026</p>
+                            </div>
+                            <button class="view-btn"><i data-lucide="maximize-2"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="gallery-item LIBURAN" data-title="Keceriaan Sinar Pagi" data-category="LIBURAN" data-date="24 November 2025" data-location="Jakarta Studio">
+                <div class="card-inner">
+                    <div class="img-wrapper">
+                        <img src="images/5.jpg" alt="Keceriaan Sinar Pagi" loading="lazy">
+                        <div class="card-glass-overlay">
+                            <span class="category-tag"><i data-lucide="user"></i> LIBURAN</span>
+                            <div class="card-info">
+                                <h3>Keceriaan Sinar Pagi</h3>
+                                <p><i data-lucide="map-pin"></i> Jakarta Studio • 2025</p>
+                            </div>
+                            <button class="view-btn"><i data-lucide="maximize-2"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="gallery-item memories" data-title="Kumpul Hangat Keluarga" data-category="Memories" data-date="01 Januari 2026" data-location="Bandung">
+                <div class="card-inner">
+                    <div class="img-wrapper">
+                        <img src="images/3.jpg" alt="Kumpul Hangat Keluarga" loading="lazy">
+                        <div class="card-glass-overlay">
+                            <span class="category-tag"><i data-lucide="heart"></i> Memories</span>
+                            <div class="card-info">
+                                <h3>Kumpul Hangat Keluarga</h3>
+                                <p><i data-lucide="map-pin"></i> Bandung • 2026</p>
+                            </div>
+                            <button class="view-btn"><i data-lucide="maximize-2"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="gallery-item travel" data-title="Pesona Pantai Tropis" data-category="Travel & Nature" data-date="15 Februari 2026" data-location="Bali">
+                <div class="card-inner">
+                    <div class="img-wrapper">
+                        <img src="images/4.jpg" alt="Pesona Pantai Tropis" loading="lazy">
+                        <div class="card-glass-overlay">
+                            <span class="category-tag"><i data-lucide="compass"></i> Travel</span>
+                            <div class="card-info">
+                                <h3>Pesona Pantai Tropis</h3>
+                                <p><i data-lucide="map-pin"></i> Nusa Penida, Bali • 2026</p>
+                            </div>
+                            <button class="view-btn"><i data-lucide="maximize-2"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="gallery-item memories" data-title="Perayaan Ulang Tahun" data-category="Memories" data-date="20 Maret 2026" data-location="Yogyakarta">
+                <div class="card-inner">
+                    <div class="img-wrapper">
+                        <img src="images/7.jpg" alt="Perayaan Ulang Tahun" loading="lazy">
+                        <div class="card-glass-overlay">
+                            <span class="category-tag"><i data-lucide="heart"></i> Memories</span>
+                            <div class="card-info">
+                                <h3>Perayaan Ulang Tahun</h3>
+                                <p><i data-lucide="map-pin"></i> Yogyakarta • 2026</p>
+                            </div>
+                            <button class="view-btn"><i data-lucide="maximize-2"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- State Hasil Pencarian Kosong -->
+        <div id="no-results" class="no-results hidden">
+            <div class="no-results-icon"><i data-lucide="frown"></i></div>
+            <h3>Momen tidak ditemukan</h3>
+            <p>Coba gunakan kata kunci pencarian lain atau pilih kategori berbeda.</p>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal Fullscreen Interaktif -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-backdrop"></div>
+        <button class="lightbox-close" id="lightbox-close"><i data-lucide="x"></i></button>
+        
+        <button class="lightbox-nav prev" id="lightbox-prev"><i data-lucide="chevron-left"></i></button>
+        <button class="lightbox-nav next" id="lightbox-next"><i data-lucide="chevron-right"></i></button>
+
+        <div class="lightbox-content">
+            <div class="lightbox-media">
+                <img id="lightbox-img" src="" alt="Fullscreen Detail">
+            </div>
+            <div class="lightbox-sidebar">
+                <div class="lightbox-header">
+                    <span id="lightbox-category-badge" class="category-badge"><i data-lucide="tag"></i> Category</span>
+                    <h2 id="lightbox-title">Judul Foto</h2>
+                </div>
+                <div class="lightbox-details">
+                    <div class="detail-item">
+                        <i data-lucide="calendar"></i>
+                        <span id="lightbox-date">Tanggal</span>
+                    </div>
+                    <div class="detail-item">
+                        <i data-lucide="map-pin"></i>
+                        <span id="lightbox-location">Lokasi</span>
+                    </div>
+                </div>
+                <p class="lightbox-description">
+                    Foto ini disimpan dalam album digital resolusi tinggi Anda. Momen ini abadi dan dapat Anda bagikan kapan saja.
+                </p>
+                <div class="lightbox-actions">
+                    <button class="action-btn primary" id="download-sim-btn"><i data-lucide="download"></i> Download High-Res</button>
+                    <button class="action-btn secondary" id="share-sim-btn"><i data-lucide="share-2"></i> Bagikan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 LUMINA Gallery. Dirancang khusus untuk memamerkan momen indah dengan gaya fotografer profesional.</p>
+    </footer>
+
+    <!-- Lucide Icon Init & Script -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
